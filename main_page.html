@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo" id = "logo">
+        </div>
+        <div class="username-container">
+            <span id="username-display" class="hidden">Loading...</span>
+            <div id="logout-options" class="logout-options">
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="welcome-message">
+        <h1 id="welcome-text">Welcome to your space, <span id="display-username">User</span></h1>
+    </div>
+
+    <div class="container">
+        <div class="explore-videos">
+            <h2>Explore Videos</h2>
+            <input type="text" id="search-input" placeholder="Search videos...">
+            <button id="search-button">Search</button>
+            <div id="videos-container">
+                <!-- Videos will get added dynamically -->
+            </div>
+        </div>
+
+        <!-- NEWS -->
+        <div class="around-the-world">
+            <h2>Around the World</h2>
+            <ul id="news-headlines" class="news-headlines">
+                <!-- News headlines will be dynamically added here -->
+            </ul>
+        </div>
+
+        <!-- WEATHER -->
+
+        <div class="weather-container">
+            <video id="weather-video" autoplay loop muted>
+                <source src="" type="video/mp4">
+                <!-- Add more <source> elements for other video formats (webm, ogg) if necessary -->
+                Your browser does not support the video tag.
+            </video>
+            <h2>Weather</h2>
+            <div class = "weather-search">
+            <input type="text" id="city-input" placeholder="Enter city name">
+    
+            <button id="search-btn">Search</button>
+            
+            </div>
+            <!-- <div class="weather-info"> -->
+                <div class="weather-main">
+                    
+                </div>
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <h3 id="city-name"></h3>
+                    </div>
+                    <div class="weather-detail">
+                        <p id="temperature"></p>
+                    </div>
+                    
+                    <div class="weather-detail">
+                        <p id="feelslike"></p>
+                    </div>
+                    
+                    <div class="weather-detail">
+                        <p id="description"></p>
+                    </div>
+                    <div class="weather-detail">
+                        <p id="wind"></p>
+                    </div>
+                    <div class="weather-detail">
+                        <p id="humidity"></p>
+                    </div>
+                    <div class="weather-detail">
+                        <p id="visibility"></p>
+                    </div>
+                    <div class="weather-detail">
+                        <p id="pressure"></p>
+                    </div>
+                </div>
+                 
+        
+    </div>
+    </div>
+    <!-- Asistant -->
+    <div class="assistant-container">
+        <input type="text" id="assistant-search-input" placeholder="Type your query">
+        <button id="voice-assistant-btn">Assistant</button>
+        <div id="assistant-responses"></div>
+    </div>
+
+    <!-- Logout Confirmation Dialog -->
+    <div id="logout-dialog" class="logout-dialog">
+        <div class="dialog-content">
+            <p>Are you sure you want to log out?</p>
+            <button id="confirm-logout">Yes</button>
+            <button id="cancel-logout">No</button>
+        </div>
+    </div>
+
+    <script type="module" src="main_page.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

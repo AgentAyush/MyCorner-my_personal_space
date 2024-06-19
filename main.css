@@ -1,0 +1,547 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto from Google Fonts */
+    background-image: url('image.png'); /* Replace with your background image */
+    background-size: cover;
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(7, 7, 7, 0.801); /* Transparent black background */
+    color: #fff;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    height: 40px; /* Adjust height as needed */
+    margin-right: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for the glow effect */
+}
+
+.logo:hover {
+
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* Glow effect without the box */
+}
+
+/* Username Container Styles */
+.username-container {
+    position: relative;
+    margin-right: 20px; /* Add some margin for spacing */
+}
+.username-container:hover{
+    background-color: #f10000c5;
+    border-radius: 8%;
+    transition-duration: 500ms;
+
+}
+#username-display {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 12px; /* Adjust padding for better visual balance */
+    background-color: rgba(255, 0, 0, 0.466);
+    color: #dcdcdc;
+    border-radius: 8%; /* Makes the container circular */
+    cursor: pointer;
+    display: inline-block; /* Ensures inline display */
+}
+
+/* Logout Options Styles */
+.logout-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.466);
+    border: 1px solid #000000;
+    border-radius: 8%;
+    z-index: 1000;
+}
+
+.logout-options button {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.466);
+    color: #dcdcdc;
+    border: none;
+    border-radius: 8%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.logout-options button:hover {
+    background-color: #f10000c5;
+    border-radius: 8%;
+}
+
+/* Logout Dialog Styles */
+.logout-dialog {
+    font-family: 'Roboto', sans-serif;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.dialog-content {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.dialog-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dialog-content #confirm-logout {
+    background-color: rgba(255, 0, 0, 0.742);
+    color: white;
+    border: none;
+    border-radius: 8%;
+}
+/* hover */
+.dialog-content #confirm-logout:hover{
+    background-color: #ff0000dc;
+    border-radius: 8%;
+}
+
+.dialog-content #cancel-logout {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 8%;
+}
+/* hover */
+.dialog-content #cancel-logout:hover{
+    background-color: #28cdff;
+    border-radius: 8%;
+}
+.welcome-message {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: transform 0.4s ease;
+}
+
+.welcome-message:hover {
+    transform: scale(1.05); /* Zoom in slightly on hover */
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+.welcome-message h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 100; /* Thin font weight */
+    position: relative;
+    display:inline-block;
+    padding: 10px;
+    border: 1px solid #fff; /* Thin white border */
+    border-radius: 8px;
+
+}
+
+
+
+
+.container {
+    padding-left: 1%;
+    padding-top: 1%;
+    margin-top: 5%;
+    position:absolute; /* Ensure relative positioning */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden; /* Hide overflow from body */
+}
+
+.explore-videos {
+    width: 27%; /* Fixed width for the explore videos container */
+    height: 55%; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: rgba(255, 78, 78, 0.276);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+    margin-left: 5%;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff16 #000000; /* thumb color track color */
+    user-select: none;
+    
+    
+}
+.explore-videos:hover{
+    transform: scale(1.05); /* Zoom in slightly on hover */
+}
+
+.explore-videos h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: 100; /* Thin font weight */
+    position: relative;
+    display:inline-block;
+    padding: 5px;
+    border: 1px solid #fff; /* Thin white border */
+    border-radius: 8px;
+    color: white;
+    user-select: none;
+}
+
+.explore-videos input[type="text"] {
+    width: calc(100% - 80px);
+    background-color: #230b0b71;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #353535;
+    border-radius: 8px;
+    font-size: 1em;
+    color: white;
+}
+
+.explore-videos button {
+    font-weight: 100;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.466);
+    color: #e7e7e7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.explore-videos button:hover {
+    background-color: #ff0000f3;
+    transition: 400ms;
+}
+
+.videos-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Adjust grid columns as needed */
+    grid-gap: 20px;
+    margin-top: 20px;
+    max-height: calc(100vh - 10px); /* Adjust max-height for the videos container */
+    overflow-y:auto /* Enable scrolling within videos container */
+}
+
+
+.video-item {
+    background-color: #000000a6;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-item a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 150;
+    color: white; /* Set the color of the video links to white */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+.video-item a:hover {
+    text-decoration:underline; /* Optional: Add underline on hover */
+    transition: 400ms;
+    text-decoration-thickness: 0.5px
+}
+
+
+
+.video-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-item p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+
+/* NEWS */
+.around-the-world {
+    padding: 10px; /* Adjust padding as needed */
+    /* margin: 20px auto; Center the container horizontally */
+    margin-left: 5%;
+    width: 27%; /* Adjust width as needed */
+    height: 55%;
+    min-height: 200px; /* Set a minimum height */
+    background: #18256759;
+    border-radius: 8px;
+    text-align: center; /* Center align text */
+    transition: transform 0.4s ease;
+    overflow-y:auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff16 #000000; /* thumb color track color */
+    user-select: none;
+    
+}
+
+.around-the-world:hover{
+    transform: scale(1.05); /* Zoom in slightly on hover */
+
+
+}
+
+.around-the-world h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: 100; /* Thin font weight */
+    position: relative;
+    display:inline-block;
+    padding: 5px;
+    border: 1px solid #fff; /* Thin white border */
+    border-radius: 8px;
+    color: white;
+    user-select: none;
+}
+
+
+.news-headlines {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.news-headlines li {
+    margin-bottom: 10px;
+}
+
+.news-headlines a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 100;
+}
+
+.news-headlines a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px
+}
+
+
+
+/* WEATHER */
+.weather-container {
+    position: relative;
+    padding: 20px;
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #0000002c; /* Fallback color */
+    border-radius: 8px;
+    width: 32%;
+    height: 40%;
+    min-height: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s ease;
+}
+
+#weather-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1; 
+    transition: opacity 0.5s ease;
+}
+
+
+.weather-container:hover{
+    transform: scale(1.05); /* Zoom in slightly on hover */
+}
+.weather-container h2 {
+    text-align: center; /* Align text to the left */
+    font-family: 'Roboto', sans-serif;
+    width: auto; /* Ensure it takes the width of the content */
+    font-size: 1.2em;
+    margin: 0; /* Remove automatic centering */
+    font-weight: 400; /* Thin font weight */
+    padding: 5px;
+    border: 1px solid #fff; /* Thin white border */
+    border-radius: 8px;
+    color: white;
+    user-select: none;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5); 
+    user-select: none;
+}
+
+
+.weather-search {
+    font-weight: 100;
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    width: auto;
+    ::placeholder {
+        color: white;
+    opacity: 0.8;
+    font-weight: 100;}
+}
+
+.weather-search input[type="text"] {
+    font-weight: 100;
+    padding: 8px;
+    width: 60%;/* Adjust width as needed */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; /* Text color inside the input */
+    margin-right: 5px; /* Space between input and button */
+    /* Changing placeholder color */
+    
+}
+
+.weather-search button {
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    width: 40%;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.weather-search button:hover{
+    background-color: rgba(25, 246, 25, 0.543);
+}
+
+.weather-info {
+    flex-grow: 1;
+    margin:0px;
+}
+
+
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
+
+.weather-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    overflow: auto; /* Enable scrolling for details */
+    color: white;
+    font-weight: 150;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff16 #000000; /* thumb color track color */
+    user-select: none;
+    
+}
+
+.weather-detail {
+    background: rgba(33, 33, 33, 0.815);
+    width: 30%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    flex: 0 1 150px; /* Fixed width of 150px for all boxes */
+    text-align: center;
+    box-sizing: border-box; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: transform 0.2s ease;
+}
+
+.weather-detail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.646);
+    font-weight: 400;
+}
+
+
+/* ASSISTANT */
+
+.assistant-container {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 7px;
+    margin-top: 30%;
+    margin-left: 65.5%;
+    margin-right: 4%;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#assistant-search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#voice-assistant-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* #assistant-responses {
+    margin-top: 10px;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}    */
