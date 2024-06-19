@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Corner</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <a href="#" class="logo-link">
+            <img src="logo.png" alt="Logo" class="logo">
+        </a>
+        
+        <div id="signup-page" class="container">
+            <h2>Sign Up</h2><br>
+            <input type="text" id="signup-username" name="username" placeholder="Username" />
+            <input type="text" id="signup-email" name="email" placeholder="E-mail" />
+            <input type="password" id="signup-password" name="password" placeholder="Password" />
+            <input type="submit" id="signUp" name="signup_submit" value="Sign Up"/>
+            <button id="goToLogin">Already registered? Login</button>
+            <button id="googleSignIn" class="google-btn">Continue with Google</button>
+        </div>
+
+        <div id="login-page" class="container" style="display: none;">
+            <h2>Login</h2><br>
+            <input type="text" id="login-email" name="email" placeholder="E-mail" />
+            <input type="password" id="login-password" name="password" placeholder="Password" />
+            <input type="submit" id="login" name="login_submit" value="Login"/>
+            <button id="goToSignup">New user? Sign Up</button>
+            <button id="googleSignInLogin" class="google-btn">Continue with Google</button>
+        </div>
+    </div>
+    
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <script src="scripts.js" type="module"></script>
+    <!-- Include Firebase SDK for Google Sign-In -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+</body>
+</html>
